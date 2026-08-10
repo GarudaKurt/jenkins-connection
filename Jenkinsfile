@@ -3,7 +3,7 @@ pipeline {
 
     options {
         timestamps()
-        buildDiscarder(logRotator(numToKeepStr: '10'))
+        buildDiscarder(logRotator(numToKeepStr: '20'))
     }
 
     environment {
@@ -20,25 +20,25 @@ pipeline {
 
         stage('Configure') {
             steps {
-                sh """
-                    cmake -S . -B %BUILD_DIR% -G "MinGW Makefiles" -DCMAKE_CXX_COMPILER=C:/msys64/ucrt64/bin/g++.exe
-                """
+                sh '''
+                    cmake -S . -B $BUILD_DIR
+                '''
             }
         }
 
         stage('Build') {
             steps {
-                sh """
-                    cmake --build %BUILD_DIR%
-                """
+                sh '''
+                    cmake --build $BUILD_DIR
+                '''
             }
         }
 
         stage('Test') {
             steps {
-                sh """
-                    %BUILD_DIR%\\main.exe
-                """
+                sh '''
+                    ./$BUILD_DIR/main
+                '''
             }
         }
     }
