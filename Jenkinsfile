@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'gcc:13'
+        }
+    }
 
     options {
         timestamps()
@@ -15,6 +19,15 @@ pipeline {
         stage('Checkout') {
             steps {
                 checkout scm
+            }
+        }
+
+        stage('Install Tools') {
+            steps {
+                sh '''
+                    apt-get update -qq
+                    apt-get install -y -qq cmake
+                '''
             }
         }
 
