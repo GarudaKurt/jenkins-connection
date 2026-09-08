@@ -23,6 +23,19 @@ pipeline {
             }
         }
 
+	stage('Check Agent') {
+	    steps { 
+                sh ''
+                    echo "===== AGENT INFORMATION ====="
+		    echo "User: $whoami"
+		    echo "OS:"
+		    cat /etc/os-release
+		    echo "Java:"
+		    java --version
+		''
+	    }
+	}
+
         stage('Install Tools') {
             steps {
                 sh '''
