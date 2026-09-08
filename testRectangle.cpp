@@ -13,7 +13,7 @@ void TestRectangle::test1(){
 }
 
 void TestRectangle::test2() {
-    SetValues(3,2);
+    SetValues(5,2);
     int area = GetArea();
     int peremeter = GetPeremeter();
     fprintf(stdout,"Test 2 is working..\n");
