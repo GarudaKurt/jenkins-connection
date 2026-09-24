@@ -1,6 +1,6 @@
 Git Revert Practice
 
-Version 3
+Version 2
 
 Project: Git Practice
 Status: Intial Version
@@ -9,6 +9,5 @@ Line 1: Original Content
 Line 2: Original Content
 Line 3: Original Content
 Line 4: New content
-Line 5: Another new line
 
-End of Version 3
+End of Version 2
