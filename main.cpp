@@ -14,5 +14,6 @@ int main() {
     printf("Peremeter of rectangle %d\n",rec.GetPeremeter());
     test.test1();
     test.test2();
+    printf("Test done");
     return 0;
 }
