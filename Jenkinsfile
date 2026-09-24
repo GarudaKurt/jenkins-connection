@@ -54,6 +54,13 @@ pipeline {
                 '''
             }
         }
+	stage('Hello World') { 
+            steps { 
+                sh '''
+		    Hello wolrd added readme file.
+		 '''
+	    }
+	}
     }
 
     post {
