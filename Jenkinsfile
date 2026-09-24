@@ -1,6 +1,5 @@
 pipeline {
     agent {
-        label "ShapeClasses-Machine"
         docker {
             image 'gcc:13'
         }
